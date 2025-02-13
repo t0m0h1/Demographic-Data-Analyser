@@ -17,6 +17,9 @@ def calculate_demographic_data(print_data=True):
 
     # What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
     # What percentage of people without advanced education make more than 50K?
+    higher_education = df[df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])].mean() * 100
+    lower_education = df[~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])].mean() * 100 
+
 
     # with and without `Bachelors`, `Masters`, or `Doctorate`
     higher_education = None
