@@ -4,6 +4,10 @@ def calculate_demographic_data(print_data=True):
     # Read data from file
     df = pd.read_csv('adult.data.csv')
     
+    # Remove NaN values
+    df = df.dropna()
+    
+    
     # Count of each race
     race_count = df['race'].value_counts()
     
